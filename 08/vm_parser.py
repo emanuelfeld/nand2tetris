@@ -1,7 +1,8 @@
-ARITHMETIC_OPERATIONS = ['add', 'sub', 'or', 'and', 'not', 'neg']
-LOGICAL_OPERATIONS =['eq', 'lt', 'gt']
-
 class Parser:
+
+    _ARITHMETIC_OPERATIONS = ['add', 'sub', 'or', 'and', 'not', 'neg']
+    _LOGICAL_OPERATIONS =['eq', 'lt', 'gt']
+
     def __init__(self, lines):
         self.index = 0
         self.lines = []
@@ -19,9 +20,9 @@ class Parser:
         return self.current
 
     def get_cmd_type(self):
-        if self.current[0] in ARITHMETIC_OPERATIONS:
+        if self.current[0] in self._ARITHMETIC_OPERATIONS:
             return 'arithmetic'
-        elif self.current[0] in LOGICAL_OPERATIONS:
+        elif self.current[0] in self._LOGICAL_OPERATIONS:
             return 'logical'
         else:
             return self.current[0]
